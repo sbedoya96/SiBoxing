@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 
-using Xamarin.Forms;
+
 
 namespace Si_Boxing
 {
-	public partial class App : Application
+    using Xamarin.Forms;
+    using Views;
+
+    public partial class App : Application
 	{
+        
+
 		public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new Si_Boxing.MainPage();
+			MainPage = new LoginPage();
 		}
 
 		protected override void OnStart ()

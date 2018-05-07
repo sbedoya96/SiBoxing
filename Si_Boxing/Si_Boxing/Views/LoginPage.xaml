@@ -2,11 +2,62 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Si_Boxing.Views.LoginPage">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <!--<NavigationPage 
+     xmlns="http://xamarin.com/schemas/2014/forms"
+     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     BarBackgroundColor="{StaticResource ColorRosa}" 
+     BarTextColor="{StaticResource ColorAzul}" >
+            
+            
+        </NavigationPage>-->
+        <StackLayout
+            Padding="10,20,10,5">
+            
+            <Label Text="SIBOXING"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center" />
+            <Image
+                Source="cinturon"
+                HeightRequest="200">
+                
+            </Image>
+            <Label
+                Text="User"
+                >
+                
+            </Label>
+            <Entry
+                Placeholder="Enter your ID"
+                Keyboard="Email"> 
+                
+                
+            </Entry>
+            <Label
+                Text="Password"
+              >
+
+            </Label>
+            <Entry
+                Placeholder="Enter your password"
+                IsPassword="True">
+
+
+            </Entry>
+
+            <ActivityIndicator>
+                
+            </ActivityIndicator>
+            <Button
+                BackgroundColor="Navy"
+                Text="Login"
+                TextColor="White"
+                BorderRadius="23">
+                
+                
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
