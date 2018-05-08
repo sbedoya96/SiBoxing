@@ -131,4 +131,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\cinturon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\boxeo.png" />
+  </ItemGroup>
 </Project>
