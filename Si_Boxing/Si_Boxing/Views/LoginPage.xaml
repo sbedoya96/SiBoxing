@@ -6,7 +6,7 @@
              Title="Login">
     
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView BindingContext="{Binding Login}">
             <StackLayout
             Padding="10,20,10,5">
 
@@ -26,15 +26,16 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="User" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"></Label>
-                    <Entry Placeholder="Enter your ID" Keyboard="Email" Grid.Row="0" Grid.Column="1" ></Entry>
+                    <Entry Placeholder="Enter your ID" Keyboard="Email" Grid.Row="0" Grid.Column="1" Text="{Binding Email, Mode=TwoWay}"></Entry>
                     <Label Text="Password" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"></Label>
-                    <Entry Placeholder="Enter your password" IsPassword="True" Grid.Row="1" Grid.Column="1"></Entry>
+                    <Entry Placeholder="Enter your password" IsPassword="True" Grid.Row="1" Grid.Column="1" Text="{Binding Password, Mode=TwoWay}"></Entry>
                 </Grid>
+                <ActivityIndicator VerticalOptions="CenterAndExpand" IsRunning="{Binding isRunning, Mode=TwoWay}"></ActivityIndicator>
                 <StackLayout Orientation="Horizontal" Margin="40,0">
                     <Label Text="Remember me" VerticalOptions="Center" HorizontalOptions="StartAndExpand"></Label>
-                    <Switch HorizontalOptions="End" ></Switch>
+                    <Switch HorizontalOptions="End" IsToggled="{Binding IsRemember, Mode=TwoWay}"></Switch>
                 </StackLayout>
-                <Button BackgroundColor="Navy" Text="Login" TextColor="White" BorderRadius="23"></Button>
+                <Button BackgroundColor="Navy" Text="Login" TextColor="White" BorderRadius="23" Command="{Binding LoginCommand}"></Button>
                 <Button BackgroundColor="LightBlue" Text="Register" TextColor="White" BorderRadius="23"></Button>
 
             </StackLayout>
