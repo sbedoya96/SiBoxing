@@ -5,7 +5,9 @@ using System.Windows.Input;
 
 namespace Si_Boxing.ViewModels
 {
+    using GalaSoft.MvvmLight.Command;
     using System.Windows.Input;
+    using Xamarin.Forms;
 
     public class LoginViewModel
     {
@@ -19,8 +21,33 @@ namespace Si_Boxing.ViewModels
 
         #region Commands
 
-        public ICommand LoginCommand { get; set; }
+        public ICommand LoginCommand {
 
+            get
+            {
+                return new RelayCommand(Login);
+            }
+        }
+        private async void Login()
+        {
+            if (string.IsNullOrEmpty(this.Email))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "You must enter an email",
+                    "Acept");
+                return;
+            }
+            if (string.IsNullOrEmpty(this.Password))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "You must enter an password",
+                    "Acept");
+                return;
+            }
+
+        }
         #endregion
 
         #region Constructors
@@ -29,6 +56,7 @@ namespace Si_Boxing.ViewModels
             this.IsRemember = true;
 
         }
+        
         #endregion
     }
 
